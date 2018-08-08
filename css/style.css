@@ -151,6 +151,14 @@ ul li + li {
 }
 
 /*Footer*/
+.footer-text {
+    color: var(--red);
+}
+
+.footer-paragraph {
+    margin-bottom: 45px;
+}
+
 .wrapper-footer {
     height: 79px;
     width: auto;
