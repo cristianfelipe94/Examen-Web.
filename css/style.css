@@ -1,3 +1,4 @@
+/*Helpers*/
 :root {
 	--primarygray: #ededed;
 	--red: #d3001c;
@@ -9,12 +10,61 @@
     --footerBack: #e2e0e0;
 }
 
+.clearfix::after {
+    display: block;
+    content: "";
+    clear: both;
+}
+
+/*End Helpers*/
+
+
+html {
+    border-top: 11px solid var(--primarygray);
+}
+
 body {
     margin: 0 118px;
     font-size: 14px;
     font-family: Arial, Helvetica, sans-serif;
     color: var(--fonts);
+    position: absolute;
 }
+
+/*Top Part*/
+.top-logo {
+    position: relative;
+    left: 98px;
+}
+
+.main-title {
+    margin: 0px;
+    margin-left: 95px;
+    font-size: 27px;
+    color: var(--fonts);
+    display: block;
+}
+
+/*Nav Bar*/
+
+ul li {
+    float: left;
+    font-size: 18px;
+    color: var(--fonts);
+    text-align: center;
+    margin: 42px 0 6px 0;
+    list-style: none;
+}
+
+ul li + li {
+    margin-left: 52px;
+}
+
+.nav-wrapper {
+    border-bottom: 6px solid var(--divbar);
+}
+
+/*Intro Paragraph*/
 
 /*Footer*/
 .wrapper-footer {
