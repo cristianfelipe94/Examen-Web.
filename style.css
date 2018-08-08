@@ -1,0 +1,212 @@
+:root {
+	--primary: #ddd;
+	--dark: #333;
+	--light: #fff;
+	--shadow: 0 1px 5px rgba(104, 104, 104, 0.8);
+}
+
+html{
+	font-family: Arial, Helvetica, sans-serif;
+}
+body{
+	background: #CDC3C2;
+	margin: 1em;
+}
+
+.btn{
+	background: var(--dark);
+	color: var(--light);
+	padding: 0.6em;
+	text-decoration: none;
+	box-shadow: var(--shadow);
+	transition: background-color .3s;
+}
+
+.btn:hover {
+	background: #8D1D11;
+	color: var(--light);
+}
+
+
+/* Navigation */
+.main-nav ul{
+	display: grid;
+	grid-gap: 20px;
+	padding: 0.5px;
+	list-style: none;
+	grid-template-columns: repeat(4, 1fr);
+}
+
+.main-nav a {
+	background: #1F1717;
+	display: block;
+	text-decoration: none;
+	text-align: center;
+	color: var(--light);
+	text-transform: uppercase;
+	font-size: 1.1rem;
+	box-shadow: var(--shadow);
+	transition: background-color .5s;
+}
+
+
+.main-nav a:hover {
+	background: #8D1D11;
+	color: var(--light);
+}
+
+/* Top Container */
+/*Set the Class Top container to be displaied as grid, the grid template area
+will set the values or the many boxes that the grid has. Then we call the
+grid name to specify the CSS style we will set them.*/
+.top-container {
+	display: grid;
+	grid-gap: 1em;
+	grid-template-areas:
+	'showcase top-box-a'
+	'showcase top-box-b'		
+}
+
+
+/*Grid Area Showcase, set an image as background.*/
+/*Text padding 5%, responsive, size depends on container's size.*/
+/*Text or content displays as Flex, use Flex direction to change the way
+the content should appear, in this case we specify to display it in one column.*/
+/*Text aling and justify content*/
+
+.showcase{
+	grid-area: showcase;
+	background-color: #333;
+	background-image: url(pink.png);
+	background-size: cover;
+	background-position: center;
+	/*background-origin: border-box;*/
+	/*background-clip: border-box;*/
+	background-repeat: no-repeat;
+	padding-left: 1%;
+	display: flex;
+	flex-direction: column;
+	align-items: start;
+	justify-content: center;
+	box-shadow: var(--shadow);
+}
+
+.showcase h1{
+	font-size: 3rem;
+	margin-bottom: 0;
+	color: var(--light);
+}
+
+.showcase p{
+	font-size: 1.3rem;
+	margin-top: 0;
+	color: var(--light);
+}
+
+/*Top Box */
+.top-box-a{
+	background: var(--primary);
+	display: grid;
+	align-items: center;
+	box-shadow: var(--shadow);
+	padding: 1.5rem;
+}	
+
+.top-box-b{
+	background: var(--primary);
+	display: grid;
+	align-items: center;
+	box-shadow: var(--shadow);
+	padding: 1.5rem;
+}	
+
+
+/*Boxes*/
+/*Display as grid, means the way the boxes are going to be displayed, we set that
+the boxes will have a template as columns and they will fit on the space
+they have, which every box has a 200px space and 1fraction.*/
+.boxes {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax (200px, 1fr));
+}
+
+/*Boxes that have the Box Class will have a Text Align, the Text will have
+padding space and the boxes a margin of 1rem, responsive.*/
+.box {
+	background: var(--primary);
+	text-align: center;
+	padding: 1rem;
+	margin-top: 1rem;
+	box-shadow: var(--shadow);
+}
+
+/*Info*/
+/*Info box, display as block so the size of it will take all the place in the page*/
+.info{
+	background: var(--primary);
+	box-shadow: var(--shadow);
+	display: block;
+	text-align: center;
+	padding: 3rem;
+	margin: 1rem;
+}
+
+
+/*Porta*/
+.portfolio{
+	display: grid;
+	grid-gap: 20px;
+	grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+.portfolio img{
+	width: 100%;
+	box-shadow: var(--shadow);
+}
+
+/*Footer */
+footer{
+	margin-top: 1rem;
+	background: var(--dark);
+	color: var(--light);
+	text-align: center;
+	padding: 0.5rem;
+}
+
+/*Media Queries */
+@media (max-width: 700px) {
+	.top-container{
+	grid-template-areas:
+	'showcase showcase'
+	'top-box-a top-box-b';
+	}
+
+	.showcase h1 {
+	font-size: 2.5rem;
+	}
+	.main-nav ul {
+	grid-template-columns:1fr;
+	}
+	.info {
+	grid-template-columns:1fr;
+	}
+
+	.info .btn {
+	display: block;
+	text-align: center;
+	margin: auto;
+	}
+}
+
+@media (max-width: 500px){
+	.top-container {
+	grid-template-areas:
+	'showcase'
+	'top-box-a'
+	'top-box-b';
+	}
+
+	.main-nav ul{
+	grid-template-columns:1fr;
+	}
+}
